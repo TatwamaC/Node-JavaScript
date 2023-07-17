@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+        <title>Document</title>
+        <script>
+           let pro = function(){
+            var name = document.getElementById("inp").value;
+            document.getElementById("ss").innerHTML = name;
+           } 
+        </script>
+</head>
+<body>
+    <h1>Welcome to Javascript</h1>
+    <form>
+        username : <input type="text" id="inp"><p>
+            <input type="button" value="greet user"
+            onclick="pro()">
+        </p><br>
+        Hello :<span name="ss" id="ss"></span>
+    </form>
+</body>
+</html>

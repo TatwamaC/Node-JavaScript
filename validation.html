@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <title>FrontEnd Validation</title>
+    <style>
+        #s1,#s2 {
+            color: red;
+        }
+    </style>
+    <script>
+        let validateName = function(){
+            let user =document.getElementById("username").value;
+            if(user.length < 5){
+                document.getElementById("s1").innerHTML = "Name should be of atleast 5 letters";
+                document.getElementById("username").focus();
+                document.getElementById("username").select();
+                return false;
+            }else{
+                document.getElementById("username").innerHTML = "";
+                return true;
+            }
+        }    
+
+            let validatePassword = function(){
+            let pass =document.getElementById("password").value;
+            if(pass.length < 8){
+                document.getElementById("s2").innerHTML = "Password should be of atleast 8 letters";
+                document.getElementById("password").focus();
+                document.getElementById("password").select();
+                return false;
+            }else{
+                document.getElementById("password").innerHTML = "";
+                return true;
+            }
+
+        }
+            let validateForm = ()=>{
+                if(validateName() && validatePassword()){
+                    return true;
+                }else return false;
+            }
+    </script>
+</head>
+<body>
+    <h1>Welcome to Javascript</h1>
+    <form onsubmit="return validateForm()">
+    Username: <input type="text" id="username" required><span id="s1"></span><br><br>
+    Password: <input type="text" id="password" required><span id="s2"></span><br>
+    <input type="submit" value="submit"></button>
+    </form>
+</body>
+</html>
